@@ -5,15 +5,25 @@ function SmartDisplay() {
     const data = useLoaderData()
   
     console.log(data);
-  
+    const { stopIds } = data.params;
+
+    /* option possible */
+    // if (!stopIds) {
+    //     return (<div>erreur</div>)
+    // }
+
     return (
-      <div>
-        <h1>Le stop ID est : </h1>
-        <h2>{data.params.stopIds}</h2>
-      </div>
+        <div>
+            {stopIds ? 
+                (<div>
+                    <h1>Le stop ID est : </h1>
+                    <h2>{ stopIds }</h2>
+                </div>
+                ) : (
+                <h1>Error not found</h1>
+                )}
+        </div>
     )
   }
 
   export default SmartDisplay
-
-  //just for test PR
