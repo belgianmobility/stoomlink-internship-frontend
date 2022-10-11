@@ -1,6 +1,7 @@
 import gtfsDepartures from "../../loaders/gtfsDepartures"
-import SmartDispay from "../../pages/SmartDisplay"
+import gtfsStops from "~/loaders/gtfsStops"
+import SmartDisplay from "../../pages/SmartDisplay"
 
-export const loader = gtfsDepartures
+export const loader = gtfsStops
 
-export default SmartDispay
+export default SmartDisplay

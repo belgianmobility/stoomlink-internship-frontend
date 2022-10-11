@@ -3,21 +3,19 @@ import { useLoaderData } from "@remix-run/react";
 function SmartDisplay() {
 
     const data = useLoaderData()
-  
-    console.log(data);
-    const { stopIds } = data.params;
 
     /* option possible */
     // if (!stopIds) {
     //     return (<div>erreur</div>)
     // }
 
+    const { name } = data ? data : {} // sort version : const { name } = data || {}
+
     return (
         <div>
-            {stopIds ? 
+            {data ? 
                 (<div>
-                    <h1>Le stop ID est : </h1>
-                    <h2>{ stopIds }</h2>
+                    <h1>{`Le stop name est : ${name}`}</h1>
                 </div>
                 ) : (
                 <h1>Error not found</h1>
