@@ -1,12 +1,16 @@
+import DepartureTimeHr from "./DepartureTimeHr"
+import Headsign from "./Headsign"
 import ShortName from "./ShortName"
 
 function DepartureRow(props: any) {
 
-    const {depart, index} = props    
+    const {depart} = props    
 
     return(
-        <div>
+        <div className="departure-row">
             <ShortName depart={depart} />
+            <Headsign depart={depart} />
+            <DepartureTimeHr depart={depart} />
         </div>
     )
 }
