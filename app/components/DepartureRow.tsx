@@ -1,8 +1,12 @@
+import ShortName from "./ShortName"
+
 function DepartureRow(props: any) {
+
+    const {depart, index} = props    
 
     return(
         <div>
-            departure
+            <ShortName depart={depart} />
         </div>
     )
 }
@@ -18,7 +22,7 @@ export default DepartureRow
 //             return (<li key={index} className="departure-row">
 //               {/* {`${departureDateTimeLocaleString} : ${item.headsign}`} */}
 //               <div className="short-name" style={{backgroundColor: `#${item.gtfsRouteByRouteId.color}`}}>{item.gtfsRouteByRouteId.shortName}</div>
-//               <div className="headsign">{item.headsign}</div>
+//               <div className="headsign">{item.headsign}</div> 
 //               <div className="departure-time">{departureDateTimeLocaleString}</div>
 //             </li>)
 //           })}

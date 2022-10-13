@@ -1,11 +1,10 @@
 import { useLoaderData } from "@remix-run/react";
-import DepartureRow from "~/components/DepartureRow";
+import DepartureRow from "../components/DepartureRow";
 import Header from "../components/Header"
 
 function SmartDisplay() {
 
     const data = useLoaderData()
-    console.log("data : ", data);
 
     const {stopDetails, departures} = data
     
@@ -19,10 +18,14 @@ function SmartDisplay() {
   // 
 
     return (
-        <div className="main-container">
-          <Header stopDetails={stopDetails}/> 
-          <DepartureRow departures={departures}/> {/* map */}
-        </div>
+      <div className="main-container">
+        <Header stopDetails={stopDetails}/> 
+        <ul>
+          {departures.map((depart: any, index: number) => (
+            <DepartureRow key={index} depart={depart}/>
+          ))}
+        </ul>
+      </div>
     )
   }
 
