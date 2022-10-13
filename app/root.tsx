@@ -8,6 +8,7 @@ import {
 import globalStylesUrl from "./styles/global.css";
 import globalMediumStylesUrl from "./styles/global-medium.css";
 import globalLargeStylesUrl from "./styles/global-large.css";
+import smartDisplayUrl from "./styles/smartdisplay.css";
 
 export const links: LinksFunction = () => {
   return [
@@ -24,6 +25,10 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: globalLargeStylesUrl,
       media: "screen and (min-width: 1024px)",
+    },
+    {
+      rel: "stylesheet",
+      href: smartDisplayUrl,
     },
   ];
 };
