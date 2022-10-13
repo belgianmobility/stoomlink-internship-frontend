@@ -8,8 +8,10 @@ function DepartureRow(props: any) {
 
     return(
         <div className="departure-row">
-            <ShortName departure={departure} />
-            <Headsign departure={departure} />
+            <div className="shortName-and-headsign">
+                <ShortName departure={departure} />
+                <Headsign departure={departure} />
+            </div>
             <DepartureTimeHr departure={departure} />
         </div>
     )
