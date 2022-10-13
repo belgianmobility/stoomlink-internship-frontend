@@ -1,15 +1,20 @@
 function ShortName(props: { depart: any }) {
 
     const {depart} = props
-    console.log(depart);
-    
+
+    const {gtfsRouteByRouteId} = depart
+    const {color, shortName, textColor} = gtfsRouteByRouteId
+
+    const style = {
+        backgroundColor: `#${color}`,
+        color:`#${textColor}`
+    }
+
     return (
-        <div className="short-name" style={{backgroundColor: `#${depart.gtfsRouteByRouteId.color}`}}>
-            {depart.gtfsRouteByRouteId.shortName}    
+        <div className="short-name" style={style}>
+            {shortName}    
         </div>
     )
 }
 
 export default ShortName
-
-// <div className="short-name" style={{backgroundColor: `#${item.gtfsRouteByRouteId.color}`}}>{item.gtfsRouteByRouteId.shortName}</div>
