@@ -1,4 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
+import DepartureRow from "~/components/DepartureRow";
+import Header from "../components/Header"
 
 function SmartDisplay() {
 
@@ -6,8 +8,8 @@ function SmartDisplay() {
     console.log("data : ", data);
 
     const {stopDetails, departures} = data
-    const {name} = stopDetails || {}
-    
+    const {name, gtfsAgencyByAgencyId} = stopDetails || {}
+    const {name : agencyName} = gtfsAgencyByAgencyId || {}
     
     /* option possible */
     // if (!stopIds) {
@@ -17,32 +19,9 @@ function SmartDisplay() {
     //const { name } = data ? data : {} // short version : const { name } = data || {}
 
     return (
-        <div>
-            {
-                stopDetails && stopDetails.name
-                ? (<h1> {name} </h1>)
-                : (<p>error no name</p>)
-            }
-            {
-                departures && departures.length
-                ? (<div>
-                    <h2>prochains départs : </h2>
-                    <ul>
-                      {departures.map((item: any, index: number) => {
-                        // console.log(typeof item.departureDateTime);
-                        const departureDateTimeLocaleString = new Date(item.departureDateTime).toLocaleDateString()
-                      return (<li key={index}>{`${departureDateTimeLocaleString} : ${item.headsign}`}</li>)
-                      }
-                      )
-                      }
-                    </ul>
-
-                    
-                  </div>
-
-                )
-                : (<p>error no departure</p>)
-            }
+        <div className="main-container">
+          <Header stopName={name} agencyName={agencyName}/>
+          <DepartureRow departures={departures}/>
         </div>
     )
   }
