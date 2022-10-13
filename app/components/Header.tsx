@@ -1,13 +1,16 @@
-function Header(props: { stopName: string; agencyName: string }) {
+function Header(props: { stopDetails: any }) {
 
-    const {stopName, agencyName} = props
+    const {stopDetails} = props
+
+    const {name, gtfsAgencyByAgencyId} = stopDetails || {} // --> header
+    const {name : agencyName} = gtfsAgencyByAgencyId || {} // --> header
 
     return (
         <header>
             <div className="header-name">
                 {
-                    stopName
-                    ? (<h1> {stopName} </h1>)
+                    name
+                    ? (<h1> {name} </h1>)
                     : (<p>error no name</p>)
                 }
             </div>

@@ -8,8 +8,6 @@ function SmartDisplay() {
     console.log("data : ", data);
 
     const {stopDetails, departures} = data
-    const {name, gtfsAgencyByAgencyId} = stopDetails || {}
-    const {name : agencyName} = gtfsAgencyByAgencyId || {}
     
     /* option possible */
     // if (!stopIds) {
@@ -18,10 +16,12 @@ function SmartDisplay() {
 
     //const { name } = data ? data : {} // short version : const { name } = data || {}
 
+  // 
+
     return (
         <div className="main-container">
-          <Header stopName={name} agencyName={agencyName}/>
-          <DepartureRow departures={departures}/>
+          <Header stopDetails={stopDetails}/> 
+          <DepartureRow departures={departures}/> {/* map */}
         </div>
     )
   }
