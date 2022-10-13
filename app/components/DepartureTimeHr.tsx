@@ -1,13 +1,13 @@
-function DepartureTimeHr(props: { depart: any }) {
+function DepartureTimeHr(props: { departure: any }) {
 
-    const {depart} = props
+    const {departure} = props
 
-    const {departureDateTime} = depart
-    const departTime = new Date(departureDateTime).toLocaleTimeString('fr-EU', { hour: '2-digit', minute: '2-digit' })
+    const {departureDateTime} = departure
+    const departureTime = new Date(departureDateTime).toLocaleTimeString('fr-EU', { hour: '2-digit', minute: '2-digit' })
 
     return (
         <div>
-            {departTime}    
+            {departureTime}    
         </div>
     )
 }

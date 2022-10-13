@@ -1,8 +1,8 @@
-function ShortName(props: { depart: any }) {
+function ShortName(props: { departure: any }) {
 
-    const {depart} = props
+    const {departure} = props
 
-    const {gtfsRouteByRouteId} = depart
+    const {gtfsRouteByRouteId} = departure
     const {color, shortName, textColor} = gtfsRouteByRouteId
 
     const style = {

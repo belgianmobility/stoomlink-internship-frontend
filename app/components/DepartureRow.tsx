@@ -4,13 +4,13 @@ import ShortName from "./ShortName"
 
 function DepartureRow(props: any) {
 
-    const {depart} = props    
+    const {departure} = props    
 
     return(
         <div className="departure-row">
-            <ShortName depart={depart} />
-            <Headsign depart={depart} />
-            <DepartureTimeHr depart={depart} />
+            <ShortName departure={departure} />
+            <Headsign departure={departure} />
+            <DepartureTimeHr departure={departure} />
         </div>
     )
 }

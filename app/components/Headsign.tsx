@@ -1,8 +1,8 @@
-function Headsign(props: { depart: any }) {
+function Headsign(props: { departure: any }) {
 
-    const {depart} = props
+    const {departure} = props
 
-    const {headsign} = depart
+    const {headsign} = departure
 
     return (
         <div>

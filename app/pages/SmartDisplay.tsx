@@ -21,8 +21,9 @@ function SmartDisplay() {
       <div className="main-container">
         <Header stopDetails={stopDetails}/> 
         <ul>
-          {departures.map((depart: any, index: number) => (
-            <DepartureRow key={index} depart={depart}/>
+          {departures.map((departure: any, index: number) => (
+            <DepartureRow key={index} departure={departure}/>
+            
           ))}
         </ul>
       </div>
