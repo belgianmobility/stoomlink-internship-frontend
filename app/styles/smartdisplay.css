@@ -1,8 +1,5 @@
 .main-container {
-    margin: 20px;
-    border-color:  rgba(231,50,54,1);
-    border-width: 2px;
-    border-style: solid;
+    width: 100%;
 }
 
 ul{
@@ -19,18 +16,23 @@ header {
     justify-content: space-between;
 }
 
+.header-agency{
+    font-size: 1.5rem;
+}
+
 .departure-row{
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .short-name{
     display: flex;
     justify-content: center;
-    width: 40px;
+    width: 60px;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .shortName-and-headsign{
