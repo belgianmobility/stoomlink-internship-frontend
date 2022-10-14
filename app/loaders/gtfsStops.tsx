@@ -1,24 +1,28 @@
 export default async function gtfsStops({params}) {
   const {stopIds} = params
-  
+ 
     const query = `{
-        allGtfsStops(filter: {id: {in: ["${stopIds}"]}}) {
-          nodes {
+      allGtfsStops(filter: {id: {in: ["${stopIds}"]}}) {
+        nodes {
+          name
+          id
+          gtfsAgencyByAgencyId {
             name
             id
-            gtfsConnectionsByStopId {
-              nodes {
-                gtfsRouteByRouteId {
-                  color
-                  longName
-                  shortName
-                  textColor
-                }
+          }
+          gtfsConnectionsByStopId {
+            nodes {
+              gtfsRouteByRouteId {
+                color
+                longName
+                shortName
+                textColor
               }
             }
           }
         }
       }
+    }
       `;
   
     const response = await fetch('https://graphql.api.production.stoomlink.io/graphql', {

@@ -8,6 +8,7 @@ import {
 import globalStylesUrl from "./styles/global.css";
 import globalMediumStylesUrl from "./styles/global-medium.css";
 import globalLargeStylesUrl from "./styles/global-large.css";
+import smartDisplayUrl from "./styles/smartdisplay.css";
 
 export const links: LinksFunction = () => {
   return [
@@ -25,6 +26,10 @@ export const links: LinksFunction = () => {
       href: globalLargeStylesUrl,
       media: "screen and (min-width: 1024px)",
     },
+    {
+      rel: "stylesheet",
+      href: smartDisplayUrl,
+    },
   ];
 };
 
@@ -33,7 +38,7 @@ export default function App() {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>Remix: So great, it's funny!</title>
+        <title>My personal mobility planner</title>
         <Links />
       </head>
       <body>

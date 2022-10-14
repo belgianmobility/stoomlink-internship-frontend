@@ -1,0 +1,38 @@
+.main-container {
+    margin: 20px;
+    border-color:  rgba(231,50,54,1);
+    border-width: 2px;
+    border-style: solid;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 16px;
+}
+
+header {
+    background: linear-gradient(90deg, rgba(231,50,54,1) 0%, rgba(240,201,6,1) 100%);
+    padding: 16px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+
+.departure-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+.short-name{
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.shortName-and-headsign{
+    display: flex;
+}
