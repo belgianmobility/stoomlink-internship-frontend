@@ -5,9 +5,12 @@ function Headsign(props: { departure: any }) {
     const {headsign} = departure
 
     return (
+        headsign
+        ? (
         <div>
             {headsign}    
-        </div>
+        </div>)
+        : (<p>pas d'information</p>)
     )
 }
 

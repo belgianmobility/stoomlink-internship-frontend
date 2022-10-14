@@ -6,9 +6,11 @@ function DepartureTimeHr(props: { departure: any }) {
     const departureTime = new Date(departureDateTime).toLocaleTimeString('fr-EU', { hour: '2-digit', minute: '2-digit' })
 
     return (
-        <div>
+        departureTime
+        ? (<div>
             {departureTime}    
-        </div>
+        </div>)
+        : (<p>??:??</p>)
     )
 }
 
