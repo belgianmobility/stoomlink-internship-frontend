@@ -7,15 +7,17 @@ function DepartureRow(props: any) {
     const {departure} = props    
 
     return(
-        departure
-        ? (<div className="departure-row">
-            <div className="shortName-and-headsign">
-                <ShortName departure={departure} />
-                <Headsign departure={departure} />
-            </div>
-            <DepartureTimeHr departure={departure} />
-        </div>)
-        : (<p>voyage non trouvé</p>)
+        <div className="departure-row">
+            {departure
+            ? (<>
+                <div className="shortName-and-headsign">
+                    <ShortName departure={departure} />
+                    <Headsign departure={departure} />
+                </div>
+                <DepartureTimeHr departure={departure} />
+            </>)         
+            : (<p>voyage non trouvé</p>)
+        }</div>
     )
 }
 
