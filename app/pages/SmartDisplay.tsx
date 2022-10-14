@@ -19,13 +19,18 @@ function SmartDisplay() {
 
     return (
       <div className="main-container">
-        <Header stopDetails={stopDetails}/> 
-        <ul>
-          {departures.map((departure: any, index: number) => (
-            <DepartureRow key={index} departure={departure}/>
-            
-          ))}
-        </ul>
+        {
+          stopDetails
+          ?(<>
+            <Header stopDetails={stopDetails}/> 
+            <ul>
+              {departures.map((departure: any, index: number) => (
+                <DepartureRow key={index} departure={departure}/>
+              ))}
+            </ul>
+          </>)
+          : (<p>erreur arrêt non trouvé</p>)
+        }
       </div>
     )
   }
