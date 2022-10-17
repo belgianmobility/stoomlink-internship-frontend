@@ -4,14 +4,10 @@ function Headsign(props: { departure: any }) {
 
     const {headsign} = departure
 
-    return (
-        headsign
-        ? (
+    return (       
         <div>
             {headsign}    
         </div>)
-        : (<p>pas d'information</p>)
-    )
-}
+    }
 
 export default Headsign
