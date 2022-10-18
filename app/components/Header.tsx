@@ -1,9 +1,9 @@
-function Header(props: { stopDetails: any }) {
+function Header(props: { name: string }) {
 
-    const { stopDetails } = props
+    const { name } = props
 
-    const { name, gtfsAgencyByAgencyId } = stopDetails || {}
-    const { name: agencyName } = gtfsAgencyByAgencyId || {}
+    // const { name, gtfsAgencyByAgencyId } = name || {}
+    // const { name: agencyName } = gtfsAgencyByAgencyId || {}
 
     return (
         <header>
@@ -14,13 +14,13 @@ function Header(props: { stopDetails: any }) {
                         : (<p>error no name</p>)
                 }
             </div>
-            <div className="header-agency">
+            {/* <div className="header-agency">
                 {
                     agencyName
                         ? (<div> {agencyName} </div>)
                         : (<p>error no agency</p>)
                 }
-            </div>
+            </div> */}
         </header>
     )
 }

@@ -6,7 +6,7 @@ function SmartDisplay() {
 
     const data = useLoaderData()
 
-    const {stopDetails, departures} = data
+    const {stopDetails, departures, name} = data
     
     /* option possible */
     // if (!stopIds) {
@@ -22,7 +22,7 @@ function SmartDisplay() {
         {
           stopDetails
           ?(<>
-            <Header stopDetails={stopDetails}/> 
+            <Header name={name}/> 
             
           </>)
           : (<p>Stop non trouvé</p>)
