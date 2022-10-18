@@ -1,5 +1,6 @@
-import gtfsStops from "./gtfsStops";
+// import gtfsStops from "./gtfsStops";
 import gtfsDepartures from "./gtfsDepartures";
+import gtfsStopsAllDirections from "./gtfsStopsAllDirections";
 
 export default async function departureForStopId(argument) {
     const {params} = argument
@@ -8,7 +9,8 @@ export default async function departureForStopId(argument) {
     const [stopDetailsResp,
         departuresResp
       ] = stopIds && await Promise.allSettled([
-        gtfsStops(argument),
+        // gtfsStops(argument),
+        gtfsStopsAllDirections(argument),
         gtfsDepartures(argument)
       ])
 
