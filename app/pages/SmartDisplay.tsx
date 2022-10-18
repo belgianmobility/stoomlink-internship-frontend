@@ -23,13 +23,20 @@ function SmartDisplay() {
           stopDetails
           ?(<>
             <Header stopDetails={stopDetails}/> 
+            
+          </>)
+          : (<p>Stop non trouvé</p>)
+        }
+        {
+          departures
+          ?(
             <ul>
               {departures.map((departure: any, index: number) => (
                 <DepartureRow key={index} departure={departure}/>
               ))}
             </ul>
-          </>)
-          : (<p>erreur arrêt non trouvé</p>)
+          )
+          : (<p>Départ non trouvé</p>)
         }
       </div>
     )
