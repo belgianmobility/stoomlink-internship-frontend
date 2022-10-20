@@ -1,8 +1,11 @@
 function Clock() {
 
+    const today = new Date()
+    let hour = today.getHours()
+    let minute = today.getMinutes()
 
     return (
-        <div>clock</div>
+        <div>{hour}:{minute}</div>
     )
     
 }
