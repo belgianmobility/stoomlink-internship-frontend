@@ -1,12 +1,8 @@
 import Clock from "./Clock"
 
-function Header(props: { stopDetails: any }) {
+function Header(props: { name: string }) {
 
-    const { stopDetails } = props
-
-    const { name } = stopDetails
-    //const { name, gtfsAgencyByAgencyId } = stopDetails || {}
-    // const { name: agencyName } = gtfsAgencyByAgencyId || {}
+    const { name } = props
 
     return (
         <header>
