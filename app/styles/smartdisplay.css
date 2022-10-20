@@ -21,8 +21,9 @@ header {
     line-height: 6rem;
 }
 
-.header-agency{
+.header-clock{
     font-size: 4rem;
+    font-weight: bold;
 }
 
 .departure-row{
