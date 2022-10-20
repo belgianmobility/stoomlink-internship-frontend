@@ -1,3 +1,5 @@
+import Clock from "./Clock"
+
 function Header(props: { name: string }) {
 
     const { name } = props
@@ -10,6 +12,9 @@ function Header(props: { name: string }) {
                         ? (<h1> {name} </h1>)
                         : (<p>error no name</p>)
                 }
+            </div>
+            <div className="header-clock">
+                <Clock />
             </div>
         </header>
     )
