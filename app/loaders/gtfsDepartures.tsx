@@ -1,5 +1,6 @@
 export default async function gtfsDepartures({ params }) {
   const { stopIds } = params
+  const stopIdsArray = stopIds.split(',')
 
   const date = new Date()
 
@@ -7,7 +8,7 @@ export default async function gtfsDepartures({ params }) {
         allGtfsDepartures(
           first: 10,
           orderBy: DEPARTURE_DATE_TIME_ASC,
-          filter: {stopId: {in: ["${stopIds}"]},
+          filter: {stopId: {in: [${stopIdsArray.map((el) => (`"${el}"`)).join(',')}]},
           departureDateTime: {greaterThan: "${date.toISOString()}"},
           pickupType: {notEqualTo: 1}
         }

@@ -11,9 +11,11 @@ function ShortName(props: { departure: any }) {
     }
 
     return (
-        <div className="short-name" style={style}>
+        shortName
+        ? (<div className="short-name" style={style}>
             {shortName}    
-        </div>
+        </div>)
+        : (<p>???</p>)
     )
 }
 

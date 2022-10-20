@@ -6,7 +6,7 @@ function SmartDisplay() {
 
     const data = useLoaderData()
 
-    const {stopDetails, departures} = data
+    const {stopDetails, departures, name} = data
     
     /* option possible */
     // if (!stopIds) {
@@ -19,13 +19,25 @@ function SmartDisplay() {
 
     return (
       <div className="main-container">
-        <Header stopDetails={stopDetails}/> 
-        <ul>
-          {departures.map((departure: any, index: number) => (
-            <DepartureRow key={index} departure={departure}/>
+        {
+          stopDetails
+          ?(<>
+            <Header name={name}/> 
             
-          ))}
-        </ul>
+          </>)
+          : (<p>Stop non trouvé</p>)
+        }
+        {
+          departures
+          ?(
+            <ul>
+              {departures.map((departure: any, index: number) => (
+                <DepartureRow key={index} departure={departure}/>
+              ))}
+            </ul>
+          )
+          : (<p>Départ non trouvé</p>)
+        }
       </div>
     )
   }

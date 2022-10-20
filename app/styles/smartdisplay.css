@@ -1,8 +1,5 @@
 .main-container {
-    margin: 20px;
-    border-color:  rgba(231,50,54,1);
-    border-width: 2px;
-    border-style: solid;
+    width: 100%;
 }
 
 ul{
@@ -17,20 +14,31 @@ header {
     display: flex;
     color: white;
     justify-content: space-between;
+    align-items: baseline;
+}
+.header-name h1{
+    font-size: 5rem;
+    line-height: 6rem;
+}
+
+.header-agency{
+    font-size: 4rem;
 }
 
 .departure-row{
+    font-size: 3rem;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
-    padding-top: 5px;
+    padding: 10px 0;
 }
 
 .short-name{
     display: flex;
     justify-content: center;
-    width: 40px;
-    border-radius: 5px;
-    margin-right: 10px;
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
 }
 
 .shortName-and-headsign{
