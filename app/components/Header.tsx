@@ -1,6 +1,12 @@
-function Header(props: { name: string }) {
+import Clock from "./Clock"
 
-    const { name } = props
+function Header(props: { stopDetails: any }) {
+
+    const { stopDetails } = props
+
+    const { name } = stopDetails
+    //const { name, gtfsAgencyByAgencyId } = stopDetails || {}
+    // const { name: agencyName } = gtfsAgencyByAgencyId || {}
 
     return (
         <header>
@@ -10,6 +16,9 @@ function Header(props: { name: string }) {
                         ? (<h1> {name} </h1>)
                         : (<p>error no name</p>)
                 }
+            </div>
+            <div className="header-clock">
+                <Clock />
             </div>
         </header>
     )
