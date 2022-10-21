@@ -19,7 +19,6 @@ export default async function gtfsStops({params}) {
               gtfsRouteByRouteId {
                 id
                 color
-                longName
                 shortName
                 textColor
               }
