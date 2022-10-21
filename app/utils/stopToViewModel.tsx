@@ -11,18 +11,15 @@ function stopToViewModel(data) {
                 let parsedRoute = {
                     routeColorHex: `#${route.gtfsRouteByRouteId.color}`,
                     routeShortName: route.gtfsRouteByRouteId.shortName,
-                    routeTextColorHex: `#${route.gtfsRouteByRouteId.textColor}`
+                    routeTextColorHex: `#${route.gtfsRouteByRouteId.textColor}`,
+                    routeId: route.gtfsRouteByRouteId.id,
+                    // ...route
                 }
-                // console.log("parsedRoute", parsedRoute);
                 return parsedRoute
             })
         }
-        console.log(stop.gtfsConnectionsByStopId.nodes);
-        
-        console.log("parsedStop", parsedStop);
         return parsedStop
     })
-    console.log("parsedData", parsedData);
     return parsedData
 }
 export default stopToViewModel
