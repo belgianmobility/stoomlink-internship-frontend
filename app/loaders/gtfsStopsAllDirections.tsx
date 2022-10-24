@@ -1,3 +1,5 @@
+import stopToViewModel from "~/utils/stopToViewModel";
+
 export default async function gtfsStops({params}) {
   const {stopIds} = params
 
@@ -15,8 +17,8 @@ export default async function gtfsStops({params}) {
           gtfsConnectionsByStopId {
             nodes {
               gtfsRouteByRouteId {
+                id
                 color
-                longName
                 shortName
                 textColor
               }
@@ -35,12 +37,9 @@ export default async function gtfsStops({params}) {
       }),
     }).then(resp => resp.json())
 
-    
-    
-
     /* to read several stops */
     const data = response.data && response.data.allGtfsStops && response.data.allGtfsStops.nodes && response.data.allGtfsStops.nodes.length
     ? response.data.allGtfsStops.nodes
     : null
-  return data
+  return stopToViewModel(data)
 }  

@@ -14,7 +14,7 @@ export default async function departureForStopId(argument) {
         gtfsDepartures(argument)
       ])
 
-      const stopDetails = stopDetailsResp && stopDetailsResp.status === "fulfilled" && stopDetailsResp.value
+      const stopsDetails = stopDetailsResp && stopDetailsResp.status === "fulfilled" && stopDetailsResp.value
       ? stopDetailsResp.value
       : null
 
@@ -22,5 +22,5 @@ export default async function departureForStopId(argument) {
       ? departuresResp.value 
       : null
 
-      return {stopDetails, departures, name}
+      return {stopsDetails, departures, name}
 }
